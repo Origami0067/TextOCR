@@ -55,7 +55,7 @@ public class TextRecognitionProcessor extends VisionProcessorBase<Text>{
         listmots.add(value);
 
         for (String element : listmots){
-            if(element.contains("Macdo") || element.contains("M") || element.contains("MacDonald's")){
+            if(element.equals("Macdo") || element.equals("M") || element.equals("MacDonald's")){
                 System.out.println(element);
             }
         }
