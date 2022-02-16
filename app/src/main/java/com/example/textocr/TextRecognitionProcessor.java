@@ -20,6 +20,8 @@ public class TextRecognitionProcessor extends VisionProcessorBase<Text>{
     private static final String TAG = "TextRecProcessor";
     public ArrayList<String> listmots = new ArrayList<String>();
     private String value;
+    public static String lien_menu = "";
+    private String lien_macdo = "https://www.mcdonalds.fr/nos-produits/menus";
     
     private final TextRecognizer textRecognizer;
     private final Boolean shouldGroupRecognizedTextInBlocks;
@@ -57,6 +59,7 @@ public class TextRecognitionProcessor extends VisionProcessorBase<Text>{
         for (String element : listmots){
             if(element.equals("Macdo") || element.equals("M") || element.equals("MacDonald's")){
                 System.out.println(element);
+                lien_menu = lien_macdo;
             }
         }
     }

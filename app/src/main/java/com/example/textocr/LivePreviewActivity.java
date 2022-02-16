@@ -1,5 +1,8 @@
 package com.example.textocr;
 
+import static com.example.textocr.TextRecognitionProcessor.lien_macdo;
+import static com.example.textocr.TextRecognitionProcessor.lien_menu;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -55,6 +58,7 @@ public class LivePreviewActivity extends AppCompatActivity
         setContentView(R.layout.activity_live_preview);
 
         preview = findViewById(R.id.preview_view);
+        lien_menu
         if (preview == null) {
             Log.d(TAG, "Preview is null");
         }
