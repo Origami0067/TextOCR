@@ -56,7 +56,7 @@ public class TextRecognitionProcessor extends VisionProcessorBase<Text>{
 
         for (String element : listmots){
             if(element.equals("Macdo") || element.equals("M") || element.equals("MacDonald's")){
-                System.out.println("CACAPROUT : " +element);
+                System.out.println(element);
             }
         }
     }
