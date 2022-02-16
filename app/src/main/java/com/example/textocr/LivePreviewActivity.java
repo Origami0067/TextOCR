@@ -52,6 +52,7 @@ public class LivePreviewActivity extends AppCompatActivity
     private GraphicOverlay graphicOverlay;
     private String selectedModel = TEXT_RECOGNITION_LATIN;
 
+    private  Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +62,7 @@ public class LivePreviewActivity extends AppCompatActivity
         setContentView(R.layout.activity_live_preview);
 
         preview = findViewById(R.id.preview_view);
-        Button button = (Button)findViewById(R.id.button3);
+        button = findViewById(R.id.button3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +70,9 @@ public class LivePreviewActivity extends AppCompatActivity
                         Intent.ACTION_VIEW,
                         Uri.parse(lien_menu)
                 );
+                if (!lien_menu.equals("")) {
+                    startActivity(browserInternet);
+                }
             }
         });
         if (preview == null) {
