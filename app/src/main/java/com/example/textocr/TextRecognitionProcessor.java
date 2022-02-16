@@ -51,12 +51,12 @@ public class TextRecognitionProcessor extends VisionProcessorBase<Text>{
         graphicOverlay.add(
                 new TextGraphic(graphicOverlay, text, shouldGroupRecognizedTextInBlocks, showLanguageTag));
         value = text.getText();
-        System.out.println(value);
+        //System.out.println(value);
         listmots.add(value);
 
         for (String element : listmots){
-            if(element.contains("Macdo") || element.contains("M") || element.contains("MacDonald's")){
-                System.out.println(element);
+            if(element.equals("Macdo") || element.equals("M") || element.equals("MacDonald's")){
+                System.out.println("CACAPROUT : " +element);
             }
         }
     }
