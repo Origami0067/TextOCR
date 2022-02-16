@@ -144,6 +144,8 @@ public class LivePreviewActivity extends AppCompatActivity
                     Toast.LENGTH_LONG)
                     .show();
         }
+
+
     }
 
     private void getRuntimePermissions() {

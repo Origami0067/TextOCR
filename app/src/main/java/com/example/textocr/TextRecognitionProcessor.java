@@ -13,11 +13,14 @@ import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 import com.google.mlkit.vision.text.TextRecognizerOptionsInterface;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TextRecognitionProcessor extends VisionProcessorBase<Text>{
     private static final String TAG = "TextRecProcessor";
-
+    public ArrayList<String> listmots = new ArrayList<String>();
+    private String value;
+    
     private final TextRecognizer textRecognizer;
     private final Boolean shouldGroupRecognizedTextInBlocks;
     private final Boolean showLanguageTag;
@@ -47,6 +50,15 @@ public class TextRecognitionProcessor extends VisionProcessorBase<Text>{
         logExtrasForTesting(text);
         graphicOverlay.add(
                 new TextGraphic(graphicOverlay, text, shouldGroupRecognizedTextInBlocks, showLanguageTag));
+        value = text.getText();
+        System.out.println(value);
+        listmots.add(value);
+
+        for (String element : listmots){
+            if(element.contains("Macdo") || element.contains("M") || element.contains("MacDonald's")){
+                System.out.println(element);
+            }
+        }
     }
 
     private static void logExtrasForTesting(Text text) {
