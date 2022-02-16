@@ -1,6 +1,6 @@
 package com.example.textocr;
 
-import static com.example.textocr.TextRecognitionProcessor.lien_macdo;
+
 import static com.example.textocr.TextRecognitionProcessor.lien_menu;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,13 +8,16 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -58,7 +61,16 @@ public class LivePreviewActivity extends AppCompatActivity
         setContentView(R.layout.activity_live_preview);
 
         preview = findViewById(R.id.preview_view);
-        lien_menu
+        Button button = (Button)findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserInternet = new Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse(lien_menu)
+                );
+            }
+        });
         if (preview == null) {
             Log.d(TAG, "Preview is null");
         }
