@@ -21,7 +21,14 @@ public class TextRecognitionProcessor extends VisionProcessorBase<Text>{
     public ArrayList<String> listmots = new ArrayList<String>();
     private String value;
     public static String lien_menu = "";
-    private String lien_macdo = "https://www.mcdonalds.fr/nos-produits/menus";
+    public static String lien_actu = "";
+    public static String lien_localisation="";
+    private String lien_menu_macdo = "https://www.mcdonalds.fr/nos-produits/menus";
+    private String lien_actu_macdo = "https://www.mcdonalds.fr/espace-presse/actualites";
+    private String lien_localisation_macdo="https://www.mcdonalds.fr/restaurants";
+    private String lien_menu_kfc = "https://www.kfc.fr/notre-carte/en-ce-moment";
+    private String lien_actu_kfc = "https://www.kfc.fr/notre-carte/en-ce-moment";
+    private String lien_localisation_kfc = "https://www.kfc.fr/nos-restaurants";
     
     private final TextRecognizer textRecognizer;
     private final Boolean shouldGroupRecognizedTextInBlocks;
@@ -59,7 +66,14 @@ public class TextRecognitionProcessor extends VisionProcessorBase<Text>{
         for (String element : listmots){
             if(element.equals("Macdo") || element.equals("M") || element.equals("MacDonald's")){
                 System.out.println(element);
-                lien_menu = lien_macdo;
+                lien_menu = lien_menu_macdo;
+                lien_actu = lien_actu_macdo;
+                lien_localisation=lien_localisation_macdo;
+            }
+            else if(element.equals("KFC")){
+                lien_menu = lien_menu_kfc;
+                lien_actu = lien_actu_kfc;
+                lien_localisation=lien_localisation_kfc;
             }
         }
     }
